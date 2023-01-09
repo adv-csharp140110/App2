@@ -1,0 +1,20 @@
+﻿Class Type
+	Normal -> new
+	Partial -> chand ta file
+	Seald Class ->  az in class nemishe ers bari kard		
+	Abstract Class -> 
+		 new nemishe
+	Static
+		new nemishe
+		hame property va method haye class ham bayad static bashan
+
+		Global Variable
+			Desktop (single user) ✔️
+			Web (multi user) ❌
+		Utility
+			Date
+			Log
+
+
+		Signleton -> design pattern
+		
