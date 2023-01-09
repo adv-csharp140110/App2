@@ -236,8 +236,9 @@ namespace App2.Utils
         }
         /*
          * out
-         *  -> body function: value set konim
+         *  -> body function: BAYAD value set konim 
          * ref
+         *  -> body function: value mitonim set konim 
          */
 
         public static string ToJalaliAndDays_out(DateTime date, out int days, string separator = "/")
@@ -265,6 +266,20 @@ namespace App2.Utils
              * */
             days = Convert.ToInt32(Math.Floor(diff.TotalDays));
             days = Convert.ToInt32(diff.TotalDays);
+
+            return $"{year}{separator}{month}{separator}{day}";
+        }
+
+        public static string ToJalaliAndDays_ref(DateTime date, ref int days, string separator = "/")
+        {
+            var pc = new PersianCalendar(); //using System.Globalization;
+            var year = pc.GetYear(date);
+            var month = pc.GetMonth(date);
+            var day = pc.GetDayOfMonth(date);
+
+            var diff = DateTime.Now - date;
+
+            //days = Convert.ToInt32(diff.TotalDays);
 
             return $"{year}{separator}{month}{separator}{day}";
         }
