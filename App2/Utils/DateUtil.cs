@@ -44,8 +44,24 @@ namespace App2.Utils
             return result;
         }
 
+        /*
+         * Extention Method
+         * Trait
+         *
+         * class static -> method static : 1valin parameter  type moredenazar (this)
+         */
+        public static string ToJalali(this DateTime date, string separator = "/")
+        {
+            var pc = new PersianCalendar(); //using System.Globalization;
+            var year = pc.GetYear(date);
+            var month = pc.GetMonth(date);
+            var day = pc.GetDayOfMonth(date);
+            return $"{year}{separator}{month}{separator}{day}";
+        }
 
-        public static string GetJalaliMonthName_switch(DateTime date)
+
+
+        public static string GetJalaliMonthName_switch(this DateTime date)
         {
             /*
              * "فروردین",
@@ -217,6 +233,40 @@ namespace App2.Utils
             var day = Convert.ToInt32(parts[2]);
 
             return new DateTime(year, month, day, new PersianCalendar());
+        }
+        /*
+         * out
+         *  -> body function: value set konim
+         * ref
+         */
+
+        public static string ToJalaliAndDays_out(DateTime date, out int days, string separator = "/")
+        {
+            var pc = new PersianCalendar(); //using System.Globalization;
+            var year = pc.GetYear(date);
+            var month = pc.GetMonth(date);
+            var day = pc.GetDayOfMonth(date);
+
+            var diff = DateTime.Now - date;
+            //return diff?
+
+
+            /*
+             * Math.Round
+             *  10.6 -> 11
+             *  10.4 -> 10
+             * Math.Ceiling
+             *  10.6 -> 11
+             *  10.4 -> 11
+             * Math.Floor
+             *  10.6 -> 10
+             *  10.4 -> 10
+             * 
+             * */
+            days = Convert.ToInt32(Math.Floor(diff.TotalDays));
+            days = Convert.ToInt32(diff.TotalDays);
+
+            return $"{year}{separator}{month}{separator}{day}";
         }
     }
 }

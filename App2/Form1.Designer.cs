@@ -31,6 +31,8 @@
             this.buttonMiladiToJalali = new System.Windows.Forms.Button();
             this.buttonGetJalaliMonth = new System.Windows.Forms.Button();
             this.btnJalaliToMiladi = new System.Windows.Forms.Button();
+            this.buttonOut = new System.Windows.Forms.Button();
+            this.buttonRef = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMiladiToJalali
@@ -63,11 +65,33 @@
             this.btnJalaliToMiladi.UseVisualStyleBackColor = true;
             this.btnJalaliToMiladi.Click += new System.EventHandler(this.btnJalaliToMiladi_Click);
             // 
+            // buttonOut
+            // 
+            this.buttonOut.Location = new System.Drawing.Point(12, 134);
+            this.buttonOut.Name = "buttonOut";
+            this.buttonOut.Size = new System.Drawing.Size(146, 23);
+            this.buttonOut.TabIndex = 3;
+            this.buttonOut.Text = "Out Example";
+            this.buttonOut.UseVisualStyleBackColor = true;
+            this.buttonOut.Click += new System.EventHandler(this.buttonOut_Click);
+            // 
+            // buttonRef
+            // 
+            this.buttonRef.Location = new System.Drawing.Point(12, 163);
+            this.buttonRef.Name = "buttonRef";
+            this.buttonRef.Size = new System.Drawing.Size(146, 23);
+            this.buttonRef.TabIndex = 4;
+            this.buttonRef.Text = "Ref Example";
+            this.buttonRef.UseVisualStyleBackColor = true;
+            this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRef);
+            this.Controls.Add(this.buttonOut);
             this.Controls.Add(this.btnJalaliToMiladi);
             this.Controls.Add(this.buttonGetJalaliMonth);
             this.Controls.Add(this.buttonMiladiToJalali);
@@ -82,5 +106,7 @@
         private Button buttonMiladiToJalali;
         private Button buttonGetJalaliMonth;
         private Button btnJalaliToMiladi;
+        private Button buttonOut;
+        private Button buttonRef;
     }
 }
