@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MD.PersianDateTime.Standard" Version="2.4.1" />
+  </ItemGroup>
+
 </Project>

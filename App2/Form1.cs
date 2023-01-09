@@ -1,5 +1,6 @@
 using App2.Utils;
 using System.Windows.Forms;
+using MD.PersianDateTime.Standard;
 
 namespace App2
 {
@@ -70,6 +71,12 @@ namespace App2
 
             var (shamsi, days) = DateUtil.ToJalaliAndDays_tuple(new DateTime(2001, 11, 9));
             MessageBox.Show($"date: {shamsi}, days: {days}");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var pdt = new PersianDateTime(DateTime.Now);
+            MessageBox.Show(pdt.ToShortDateString());
         }
     }
 

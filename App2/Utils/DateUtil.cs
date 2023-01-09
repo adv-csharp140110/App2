@@ -284,7 +284,13 @@ namespace App2.Utils
             return $"{year}{separator}{month}{separator}{day}";
         }
 
-
+        /// <summary>
+        /// متد تست
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="separator"></param>
+        /// <example>DateUtil.ToJalaliAndDays_tuple(new DateTime(2001, 11, 9));</example>
+        /// <returns></returns>
         public static (string, int) ToJalaliAndDays_tuple(DateTime date, string separator = "/")
         {
             /* multiple value
