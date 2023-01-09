@@ -9,7 +9,7 @@ namespace App2.Utils
 {
     public static class DateUtil
     {
-        public static string MiladiToJalai(DateTime date)
+        public static string MiladiToJalai(DateTime date, string separator = "/")
         {
             var pc = new PersianCalendar(); //using System.Globalization;
             var year = pc.GetYear(date);
@@ -19,21 +19,24 @@ namespace App2.Utils
 
             // 1401/10/19
             //String Concat - badtarin performance
-            result = year + "/" + month + "/" + day;
+            //result = year + "/" + month + "/" + day;
+            result = year + separator + month + separator + day;
 
             //String Format - performance motevasat
-            result = String.Format("{0}/{1}/{2}", year, month, day);
+            //result = String.Format("{0}/{1}/{2}", year, month, day);
+            result = String.Format("{0}{separator}{1}{separator}{2}", year, month, day);
 
             //String Interpolation - performance motevasat
-            result = $"{year}/{month}/{day}";
+            //result = $"{year}/{month}/{day}";
+            result = $"{year}{separator}{month}{separator}{day}";
 
 
             //String builder - behtarin performance
             var sb = new StringBuilder();
             sb.Append(year);
-            sb.Append("/");
+            sb.Append(separator);
             sb.Append(month);
-            sb.Append("/");
+            sb.Append(separator);
             sb.Append(day);
             result = sb.ToString();
 
@@ -202,13 +205,13 @@ namespace App2.Utils
         }
 
 
-        public static DateTime JalaliToMiladi(string date)
+        public static DateTime JalaliToMiladi(string date, string separator = "/")
         {
             // date: 1401/10/19 -> 2023/01/09
             // date: 1401-10-19 -> 2023/01/09
             // .Split("/")
 
-            var parts = date.Split("/");
+            var parts = date.Split(separator);
             var year = Convert.ToInt32(parts[0]);
             var month = Convert.ToInt32(parts[1]);
             var day = Convert.ToInt32(parts[2]);
