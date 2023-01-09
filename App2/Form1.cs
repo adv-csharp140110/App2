@@ -1,4 +1,5 @@
 using App2.Utils;
+using System.Windows.Forms;
 
 namespace App2
 {
@@ -54,6 +55,21 @@ namespace App2
             int days = 0;
             var jalali = DateUtil.ToJalaliAndDays_ref(new DateTime(2001, 11, 9), ref days);
             MessageBox.Show($"date: {jalali}, days: {days}");
+        }
+
+        private void buttonTuple_Click(object sender, EventArgs e)
+        {
+            //var result = DateUtil.ToJalaliAndDays_tuple(new DateTime(2001, 11, 9));
+            //MessageBox.Show($"date: {result.Item1}, days: {result.Item2}");
+
+            //var result = DateUtil.ToJalaliAndDays_tuple(new DateTime(2001, 11, 9));
+            //var jalali = result.Item1;
+            //var days = result.Item2;
+            //MessageBox.Show($"date: {jalali}, days: {days}");
+
+
+            var (shamsi, days) = DateUtil.ToJalaliAndDays_tuple(new DateTime(2001, 11, 9));
+            MessageBox.Show($"date: {shamsi}, days: {days}");
         }
     }
 

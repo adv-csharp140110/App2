@@ -283,5 +283,40 @@ namespace App2.Utils
 
             return $"{year}{separator}{month}{separator}{day}";
         }
+
+
+        public static (string, int) ToJalaliAndDays_tuple(DateTime date, string separator = "/")
+        {
+            /* multiple value
+             *  array -> ham type bodan anaser, [0]
+             *  tuple -> na hamgoon, size max 7, .item1, .item2, ...
+             */
+
+            (int, int, string) point1 = (10, 20, "center");
+            var point2 = (20, 30, "left");
+
+            var x = point1.Item1;
+
+            point1 = point2;
+
+            //Alias
+
+            var point3 = (x: 100, y: 200, label: "right");
+            
+            point3 = point1;
+
+            //Record 
+
+            var pc = new PersianCalendar(); //using System.Globalization;
+            var year = pc.GetYear(date);
+            var month = pc.GetMonth(date);
+            var day = pc.GetDayOfMonth(date);
+
+            var diff = DateTime.Now - date;
+
+            int days = Convert.ToInt32(diff.TotalDays);
+
+            return ( $"{year}{separator}{month}{separator}{day}", days);
+        }
     }
 }

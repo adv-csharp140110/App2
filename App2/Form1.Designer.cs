@@ -33,6 +33,7 @@
             this.btnJalaliToMiladi = new System.Windows.Forms.Button();
             this.buttonOut = new System.Windows.Forms.Button();
             this.buttonRef = new System.Windows.Forms.Button();
+            this.buttonTuple = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMiladiToJalali
@@ -85,11 +86,22 @@
             this.buttonRef.UseVisualStyleBackColor = true;
             this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click);
             // 
+            // buttonTuple
+            // 
+            this.buttonTuple.Location = new System.Drawing.Point(12, 192);
+            this.buttonTuple.Name = "buttonTuple";
+            this.buttonTuple.Size = new System.Drawing.Size(146, 23);
+            this.buttonTuple.TabIndex = 5;
+            this.buttonTuple.Text = "Tuple Example";
+            this.buttonTuple.UseVisualStyleBackColor = true;
+            this.buttonTuple.Click += new System.EventHandler(this.buttonTuple_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonTuple);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.buttonOut);
             this.Controls.Add(this.btnJalaliToMiladi);
@@ -108,5 +120,6 @@
         private Button btnJalaliToMiladi;
         private Button buttonOut;
         private Button buttonRef;
+        private Button buttonTuple;
     }
 }
