@@ -18,6 +18,11 @@ namespace App2
         {
             MessageBox.Show(DateUtil.GetJalaliMonthName_switch(DateTime.Now));
         }
+
+        private void btnJalaliToMiladi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(DateUtil.JalaliToMiladi("1401/10/19").ToLongDateString());
+        }
     }
 
 }
